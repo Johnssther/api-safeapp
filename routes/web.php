@@ -15,9 +15,13 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('login', 'Auth\LoginController@login');
+$router->post('login', 'Auth\LoginController@login');
+$router->post('logout', 'Auth\LoginController@logout');
 
-$router->get('users', 'UserController@index');
+Route::group(['middleware' => ['auth']], function () use ($router) { //middleware
 
-$router->get('rounds', 'RoundController@index');
-$router->post('rounds', 'RoundController@store');
+    $router->get('users', 'UserController@index');
+    $router->get('rounds', 'RoundController@index');
+    $router->post('rounds', 'RoundController@store');
+
+});

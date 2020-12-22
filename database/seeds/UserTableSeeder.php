@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class UserTableSeeder extends Seeder
             'user_phone' => 1234567890,
             'user_active' => 1,
             'username' => 'admin',
-            'password' => Crypt::encrypt('admin')
+            'password' => Hash::make("admin") //Crypt::encrypt('admin')
         ]);
         User::create([
             'user_name' => 'Joe',
@@ -27,7 +28,7 @@ class UserTableSeeder extends Seeder
             'user_phone' => 1234567890,
             'user_active' => 1,
             'username' => 'joe',
-            'password' => Crypt::encrypt('joe')
+            'password' => Hash::make("joe")
         ]);
     }
 }
