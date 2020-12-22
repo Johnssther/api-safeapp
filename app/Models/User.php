@@ -3,10 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Laravel\Lumen\Auth\Authorizable;
 use Validator;
 
-class User extends Model
+class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
+    use Authenticatable, Authorizable;
     /**
      * The database table used by the model.
      *
@@ -57,3 +62,4 @@ class User extends Model
         return false;
     }
 }
+
