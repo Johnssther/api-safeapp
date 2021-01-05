@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
             'user_phone' => 1234567890,
             'user_active' => 1,
             'username' => 'admin',
-            'password' => Hash::make("admin") //Crypt::encrypt('admin')
+            'password' => Hash::make("admin")
         ]);
         User::create([
             'user_name' => 'Joe',
