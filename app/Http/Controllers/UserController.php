@@ -16,6 +16,7 @@ class UserController extends Controller
         $data = $query->get();
 
         return response()->json($data);
+        //
     }
 
     /**
