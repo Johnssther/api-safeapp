@@ -23,12 +23,12 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make("admin")
         ]);
         User::create([
-            'user_name' => 'Joe',
-            'user_email' => 'joe@gmail.com',
+            'user_name' => 'Juan Pablo',
+            'user_email' => 'juanpablo@gmail.com',
             'user_phone' => 1234567890,
             'user_active' => 1,
-            'username' => 'joe',
-            'password' => Hash::make("joe")
+            'username' => 'juanpablo',
+            'password' => Hash::make("juanpablo")
         ]);
     }
 }
